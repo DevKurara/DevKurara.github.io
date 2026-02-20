@@ -1,0 +1,235 @@
+/* Reset básico para remover margens padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul-escuro: #051e44; /* Cor extraída da imagem */
+    --texto-branco: #ffffff;
+}
+
+body {
+    /* Mantendo seu background original, mas garantindo que o site ocupe a tela toda */
+    background-image: url("../Images/Fundo.png"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #f0f8ff; /* Cor de fundo de segurança caso a imagem falhe */
+    font-family: 'Montserrat', sans-serif; /* Fonte moderna similar à imagem */
+    height: 100vh;
+    overflow: hidden; /* Evita rolagens indesejadas neste layout fixo */
+}
+
+/* O Container principal que forma o "L" */
+.menu-container-l {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #062868;
+    /* Dimensões para criar o bloco visual do topo esquerdo */
+    width: 500px; 
+    height: 80px;
+    
+    /* Para fazer o "L", vamos criar uma extensão vertical com pseudo-elemento */
+    display: flex;
+    align-items: center; /* Centraliza o texto verticalmente na barra horizontal */
+    padding-left: 110px; /* Espaço da esquerda */
+}
+
+/* O "L" Vertical (A perna do L descendo) */
+.menu-container-l::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px; /* Espessura da barra lateral */
+    height: 500px; /* Altura da perna do L */
+    background-color: #062868;
+    z-index: -1; /* Fica atrás para não atrapalhar cliques se necessário */
+}
+
+/* Estilização da lista */
+.menu-lista {
+    list-style: none;
+    display: flex;
+    gap: 80px; /* Espaço entre "PORTFÓLIO" e "SOBRE" */
+}
+
+/* Estilização dos Links */
+.menu-lista li a {
+    text-decoration: none;
+    color: var(--texto-branco);
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase; /* Deixa tudo maiúsculo */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+.menu-lista li a:hover {
+    opacity: 0.8; /* Efeito suave ao passar o mouse */
+}
+
+/* --- ETAPA 2: TEXTO PRINCIPAL --- */
+
+.conteudo-esquerdo {
+    /* Posicionamento do bloco inteiro de texto */
+    position: absolute;
+    top: 250px; /* Distância do topo (abaixo do menu L) */
+    left: 120px; /* Distância da lateral esquerda */
+    z-index: 1; /* Garante que o texto fique por cima do fundo */
+}
+
+.texto-apresentacao {
+    display: flex;
+    flex-direction: column;
+    padding-left: 150px;
+    gap: 15px; /* Espaçamento entre os três blocos de texto */
+}
+
+.subtitulo {
+    font-size: 40px;
+    padding-bottom: 50px;
+    font-weight: 500;
+    color: #1a1a1a; /* Quase preto */
+    letter-spacing: 1.5px;
+}
+
+.nome-principal {
+    font-family: 'Oswald', sans-serif; /* Fonte estilizada e alta */
+    font-size: 85px; /* Tamanho grande como na imagem */
+    font-weight: 600;
+    color: #062868; 
+    line-height: 1.1; /* Controla o espaço entre "CLARA DA" e "SILVEIRA" */
+    letter-spacing: 2px;
+}
+
+.cargo {
+    font-size: 25px;
+    font-weight: 600;
+    color: #1a1a1a; /* Quase preto */
+    margin-top: 10px; /* Um respiro extra acima do cargo */
+}
+
+/* --- AJUSTE ETAPA 3 e 4 --- */
+
+/* Mantemos o painel azul no fundo */
+.painel-direito {
+    position: fixed;
+    top: 0;
+    right: 8%;
+    width: 40%;
+    height: 100vh;
+    background-color: #062868;
+    z-index: 0;
+}
+
+/* Criamos uma área invisível na direita para os cards */
+.camada-cards {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%; /* Um pouco maior que o painel azul para permitir o "vazamento" */
+    height: 100vh;
+    z-index: 2; /* Fica acima do painel azul */
+}
+
+
+/* --- POSICIONAMENTO MANUAL (COMO NA IMAGEM) --- */
+
+.card-instagram {
+    top: 3%;
+    left: 20%; /* Note que o 'left' baixo faz ele sair do azul e ir para o fundo claro */
+}
+
+.card-ilustracoes {
+    top:8%;
+    right: 10%;
+}
+
+.card-editorial {
+    bottom: 5%;
+    left: 6%;
+}
+
+.card-fotografias {
+    bottom: 4%;
+    right: 26%;
+}
+
+/* --- AJUSTE DE COR E OPACIDADE DOS CARDS --- */
+
+.card {
+    position: absolute;
+    background-color: #217C9B !important;
+    width: 312px;
+    height: 390px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-decoration: none;
+    
+    /* Sombra mais forte para dar profundidade sobre o fundo escuro */
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.4); 
+    
+    /* Garante que não haja transparência herdada */
+    opacity: 1; 
+    z-index: 5;
+}
+
+/* Estilo do texto dentro dos cards */
+.card h3 {
+    color: #ffffff; /* Branco puro */
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4;
+    text-decoration: none; /* Garante que o texto específico não tenha linha */
+    color: #ffffff;        /* Força a cor branca para não ficar o azul padrão de link */
+}
+
+.card:visited, 
+.card:active, 
+.card:link {
+    text-decoration: none;
+    color: inherit; /* Mantém a cor que definimos no h3 */
+}
+
+/* Efeito ao passar o mouse: o botão sobe levemente e brilha */
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    filter: brightness(1.1);
+    box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Container para as imagens PNG */
+.container-icone {
+    width: 120px; /* Ajuste conforme o tamanho do seu ícone */
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.icone-png {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Garante que a imagem não distorça */
+}
+
+/* Ajuste no texto para não parecer link azul padrão */
+.card h3 {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0;
+}
