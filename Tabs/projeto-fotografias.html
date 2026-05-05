@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografias - Portfolio Clara</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Grandstander:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+
+    <header class="menu-container-l">
+        <nav class="menu-nav">
+            <ul class="menu-lista">
+                <li><a href="index.html">PORTFÓLIO</a></li>
+                <li><a href="about.html">SOBRE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo-interno">
+        <div class="bloco-titulo-direito">
+            <h1 class="titulo-pagina">FOTOGRAFIAS</h1>
+        </div>
+        
+        <section class="galeria-fotos">
+
+            <div class="item-post" data-title="Fotos Açaí">
+                <img src="../Images/Fotografias/Açaí 500 ml puro.png" alt="Açaí">
+                <div class="overlay-post"><span>Le Congelée</span></div>
+
+                     <div class="sub-galeria">
+                        <img src="../Images/Fotografias/Açaí 500 ml puro.png" alt="Açaí">
+                        <img src="../Images/Fotografias/IMG_2339.JPG" alt="Cupuaçu">
+                    </div>
+            </div>
+
+            <div class="item-post" data-title="Fotos Picole Le Congelée">
+                <img src="../Images/Fotografias/IMG-20201207-WA0005.jpg" alt="Picole">
+                <div class="overlay-post"><span>Le Congelée 2</span></div>
+
+                     <div class="sub-galeria">
+                        <img src="../Images/Fotografias/IMG-20201207-WA0005.jpg" alt="Picolecapa">
+                        <img src="../Images/Fotografias/WhatsApp Image 2024-06-01 at 11.20.35 AM.jpeg" alt="Açaí">
+                    </div>
+            </div>
+
+            <div class="item-post retrato" data-title="Fotos Monster">
+                <img src="../Images/Fotografias/monster png.png" alt="Capa Monster">
+                <div class="overlay-post"><span>Monster</span></div>
+                
+                <div class="sub-galeria">
+                    <img src="../Images/Fotografias/monster png.png" alt="Monster 1">
+                    <img src="../Images/Fotografias/monster 2 (1).png" alt="Monster 2">
+                </div>
+            </div>
+
+            <div class="item-post" data-title="Fotos Donuts">
+                <img src="../Images/Fotografias/foto donuts 1.png" alt="Capa Donuts">
+                <div class="overlay-post"><span>Donuts</span></div>
+                
+                <div class="sub-galeria">
+                    <img src="../Images/Fotografias/foto donuts 1.png" alt="Donuts 1">
+                    <img src="../Images/Fotografias/foto donuts 2.png" alt="Donuts 2">
+                </div>
+            </div>
+
+            <div class="item-post" data-title="Fotos Splash">
+                <img src="../Images/Fotografias/IMG_8204.jpg" alt="Splash Capa 1">
+                <div class="overlay-post"><span>Splash</span></div>
+                
+                <div class="sub-galeria">
+                    <img src="../Images/Fotografias/IMG_8204.JPG" alt="Splash Capa 1">
+                    <img src="../Images/Fotografias/IMG_8178.JPG" alt="Splash Capa 2">
+                    <img src="../Images/Fotografias/IMG_8179.JPG" alt="Splash Capa 3">
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <span class="fechar-lightbox">&times;</span>
+        <div class="container-lightbox">
+            </div>
+        <span class="titulo-lightbox" id="titulo-lightbox">Título Padrão</span>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="fechar-lightbox">&times;</span>
+        <span class="titulo-lightbox" id="titulo-lightbox"></span>
+        <img class="img-lightbox" id="img-lightbox" src="" alt="">
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
