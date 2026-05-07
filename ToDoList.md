@@ -6,3 +6,6 @@
 6. Adicionar uma mudança de pagina smooth
 7. ~~Modificar Titulos paginas~~
 8. ~~Modificar titulo overlay de cada post~~
+9. Cortar a foto do Homunculo
+10. Adicionar Posts de Instagram
+11. Função de Scrollar horizontalmente

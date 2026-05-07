@@ -3,6 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const containerLightbox = document.querySelector('.container-lightbox');
     const fecharLightbox = document.querySelector('.fechar-lightbox');
     const posts = document.querySelectorAll('.item-post');
+    const containerScroll = document.querySelector('.container-lightbox');
+
+containerScroll.addEventListener('wheel', (evt) => {
+    // Se o usuário rodar a bolinha, ele rola horizontalmente
+    if (evt.deltaY !== 0) {
+        evt.preventDefault();
+        containerScroll.scrollLeft += evt.deltaY;
+    }
+}, { passive: false });
 
     posts.forEach(post => {
         post.addEventListener('click', function() {
