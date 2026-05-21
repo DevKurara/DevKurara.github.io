@@ -626,3 +626,33 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
 }
+
+
+
+
+
+
+
+
+/* Animação Smooth troca de pagina
+
+/* Animação de Fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Aplica a animação ao corpo da página */
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Opcional: Se quiser que o link também fade-out ao clicar */
+a.fade-out {
+    animation: fadeOut 0.5s ease-in-out;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

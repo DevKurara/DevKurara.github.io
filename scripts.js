@@ -81,3 +81,29 @@ if (subGaleria) {
         }
     });
 });
+
+
+/* Troca de pagina Smooth */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona todos os links
+    const links = document.querySelectorAll('a');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Se o link abrir em outra aba ou for apenas um âncora, ignora
+            if (this.target === '_blank' || this.getAttribute('href').startsWith('#')) return;
+
+            e.preventDefault(); // Impede a navegação imediata
+            const href = this.href;
+
+            document.body.classList.add('fade-out'); // Aplica a animação
+
+            // Aguarda o tempo da animação e depois navega
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500); 
+        });
+    });
+});
+
