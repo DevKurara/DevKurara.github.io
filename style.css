@@ -610,3 +610,19 @@ body {
     color: var(--azul-escuro);
     z-index: 1001;
 }
+
+/* Adicione isso ao seu style.css */
+.pdf-lightbox {
+    flex-shrink: 0;
+    width: 600px;  /* Ajuste a largura conforme necessário */
+    height: 100%;  
+    border: none;
+    background: #fff;
+    scroll-snap-align: center;
+}
+
+/* Opcional: ajustar a aparência caso precise de scroll dentro do PDF */
+.container-lightbox {
+    overflow-x: auto;
+    overflow-y: hidden;
+}

@@ -22,23 +22,37 @@ containerScroll.addEventListener('wheel', (evt) => {
             // Limpa o conteúdo anterior do lightbox
             containerLightbox.innerHTML = '';
             
-            if (subGaleria) {
-                // Se tiver sub-galeria, pega todas as fotos dentro dela
-                const imgs = subGaleria.querySelectorAll('img');
-                imgs.forEach(img => {
-                    const imgClone = document.createElement('img');
-                    imgClone.src = img.src;
-                    imgClone.alt = img.alt;
-                    containerLightbox.appendChild(imgClone);
-                });
-            } else {
-                // Se for uma foto única, pega a imagem principal do post
-                const img = this.querySelector('img');
-                const imgClone = document.createElement('img');
-                imgClone.src = img.src;
-                imgClone.alt = img.alt;
-                containerLightbox.appendChild(imgClone);
-            }
+            // ... dentro de post.addEventListener('click', function() { ...
+if (subGaleria) {
+    // SE TIVER SUB-GALERIA, PEGA TODAS AS FOTOS/PDFs DENTRO DELA
+    const itens = subGaleria.querySelectorAll('img, .sub-galeria-item'); 
+    itens.forEach(item => {
+    // Se for uma imagem, usa o src. Se for o span, usa o data-src
+    const source = item.src || item.dataset.src;
+    
+    // Verifica se a fonte termina com .pdf
+    if (source.toLowerCase().endsWith('.pdf')) {
+        const pdfEmbed = document.createElement('iframe');
+        pdfEmbed.src = source;
+        pdfEmbed.className = 'pdf-lightbox';
+        containerLightbox.appendChild(pdfEmbed);
+    } else {
+        // É IMAGEM NORMAL
+        const imgClone = document.createElement('img');
+        imgClone.src = source;
+        imgClone.alt = item.alt || 'Imagem';
+        containerLightbox.appendChild(imgClone);
+    }
+});
+} else {
+    // SE FOR UMA FOTO ÚNICA
+    const img = this.querySelector('img');
+    const imgClone = document.createElement('img');
+    imgClone.src = img.src;
+    imgClone.alt = img.alt;
+    containerLightbox.appendChild(imgClone);
+}
+// ... resto do código
 
             // Define o título no canto inferior esquerdo
             document.getElementById('titulo-lightbox').textContent = titulo;
