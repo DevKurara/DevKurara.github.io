@@ -604,9 +604,9 @@ body {
     position: fixed;
     bottom: 40px;
     left: 80px;
-    font-family: 'Alegreya Sans SC', sans-serif; /* Ou Roboto Flex, como preferir */
+    font-family: 'Roboto Flex', sans-serif; 
     font-size: 35px;
-    font-weight: 600;
+    font-weight: 600; 
     color: var(--azul-escuro);
     z-index: 1001;
 }
@@ -655,4 +655,240 @@ a.fade-out {
 @keyframes fadeOut {
     from { opacity: 1; }
     to { opacity: 0; }
+}
+
+
+
+
+
+/* -------------------------------------------------------------- Dispositivos Menores ---------------------------------------------------------------------- */
+/* -------------------------------------------------------------- Dispositivos Menores ---------------------------------------------------------------------- */
+/* -------------------------------------------------------------- Dispositivos Menores ---------------------------------------------------------------------- */
+/* -------------------------------------------------------------- Dispositivos Menores ---------------------------------------------------------------------- */
+/* -------------------------------------------------------------- Dispositivos Menores ---------------------------------------------------------------------- */
+
+/* =========================================
+   VERSÃO TABLET E NOTEBOOKS PEQUENOS (Até 1200px)
+   ========================================= */
+@media (max-width: 1200px) {
+    
+    /* 1. Ajuste do Menu "L" para ocupar menos espaço */
+    .menu-container-l {
+        width: 350px;
+        padding-left: 90px;
+    }
+    
+    .menu-lista {
+        gap: 40px; /* Aproxima os links */
+    }
+
+    /* 2. Textos e Posições da Home */
+    .conteudo-esquerdo {
+        left: 60px; /* Puxa o texto mais para a esquerda */
+        top: 200px;
+    }
+
+    .nome-principal {
+        font-size: 60px; /* Reduz a fonte gigante */
+    }
+
+    .subtitulo {
+        font-size: 35px;
+    }
+
+    /* 3. Redimensionamento dos Cards */
+    .card {
+        width: 240px;
+        height: 300px;
+        padding: 15px;
+    }
+
+    .container-icone {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Reajuste manual para não vazarem da tela */
+    .card-instagram { top: 5%; left: 10%; }
+    .card-ilustracoes { top: 12%; right: 5%; }
+    .card-editorial { bottom: 8%; left: 5%; }
+    .card-fotografias { bottom: 5%; right: 15%; }
+
+    /* 4. Página Sobre */
+    .container-sobre {
+        padding: 100px 5% 50px 90px; /* Reduz o respiro lateral */
+    }
+
+    .titulo-sobre {
+        font-size: 40px;
+    }
+
+    .bloco-foto {
+        width: 280px;
+        height: 400px;
+    }
+
+    .contatos-sobre {
+        width: 280px;
+    }
+
+    .item-contato {
+        font-size: 16px; /* Evita que o e-mail quebre a linha */
+    }
+
+    /* 5. Páginas de Galeria */
+    .conteudo-interno {
+        margin-left: 90px;
+        padding: 30px;
+    }
+
+    .bloco-titulo-direito {
+        padding: 15px 50px 15px 30px;
+    }
+
+    .titulo-pagina {
+        font-size: 2rem;
+    }
+}
+
+/* =========================================
+   VERSÃO MOBILE (Telas menores que 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Menu L vira uma barra superior normal */
+    .menu-container-l {
+        width: 100%;
+        height: auto;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    
+    /* Remove a perna vertical do L */
+    .menu-container-l::before {
+        display: none; 
+    }
+
+    .menu-lista {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    /* 2. Texto Principal (Home) */
+    .conteudo-esquerdo {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 40px 20px;
+        text-align: center; /* Centraliza o texto no celular */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-apresentacao {
+        padding-left: 0;
+    }
+
+    .nome-principal {
+        font-size: 50px; /* Reduz o tamanho do nome */
+    }
+
+    .subtitulo {
+        font-size: 25px;
+        padding-bottom: 20px;
+    }
+
+    /* 3. Ajuste do Fundo Azul (Home) */
+    .painel-direito {
+        display: none; /* Esconde aquele bloco azul fixo da direita */
+    }
+
+    /* 4. Cards (Home) empilhados um embaixo do outro */
+    .camada-cards {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 20px 0 50px 0;
+    }
+
+    .card {
+        position: relative; /* Tira o absolute */
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 90%; /* Ocupa quase toda a largura da tela */
+        max-width: 350px;
+    }
+
+    /* 5. Página Sobre - Fica em coluna em vez de lado a lado */
+    .container-sobre {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+        align-items: center;
+    }
+
+    .conteudo-texto {
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 40px;
+    }
+
+    .conteudo-visual {
+        width: 100%;
+    }
+
+    .bloco-foto {
+        width: 100%;
+        max-width: 350px;
+        height: 450px;
+    }
+
+    /* 6. Páginas de Galeria (Fotografias, Editorial, etc) */
+    .conteudo-interno {
+        padding: 20px;
+        margin-left: 0; /* Tira a margem gigante da esquerda */
+    }
+
+    .bloco-titulo-direito {
+        position: relative;
+        top: 0;
+        right: 0;
+        padding: 15px 20px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .galeria-fotos {
+        grid-template-columns: 1fr; /* Coloca as fotos uma embaixo da outra */
+        margin-top: 20px;
+    }
+
+    /* 7. Lightbox para Mobile */
+    .container-lightbox {
+        padding: 0 5vw 80px 5vw; /* Reduz as bordas laterais */
+        gap: 15px;
+    }
+
+    .fechar-lightbox {
+        top: 15px;
+        right: 20px;
+        font-size: 40px;
+    }
+
+    .titulo-lightbox {
+        font-size: 20px;
+        bottom: 20px;
+        left: 20px;
+    }
 }
